@@ -14,6 +14,7 @@ before_install:
   - gcloud config set project kubernetes-multi-k8s-277418
   - gcloud config set compute/zone us-central1-a
   - gcloud container clusters get-credentials multi-cluster
+  - cat service-account.json
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t stephengrider/react-test -f ./client/Dockerfile.dev ./client
 
